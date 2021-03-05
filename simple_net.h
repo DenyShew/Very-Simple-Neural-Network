@@ -14,6 +14,7 @@
 class simple_net
 {
 public:
+    simple_net() = delete;
     simple_net(const std::vector<size_t>& topology) : rate(0.00381)
     {
         std::random_device rd;
@@ -88,8 +89,6 @@ public:
     {
         return this->outputs.back();
     }
-private:
-    simple_net() = delete;
 private:
     std::vector<Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic>> weights;
     std::vector<Eigen::Matrix<double, Eigen::Dynamic, 1>> outputs;
